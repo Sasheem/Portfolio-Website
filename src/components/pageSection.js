@@ -7,7 +7,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: green;
   /* margin-bottom: 3em; */
 
   @media only screen and (min-width: 600px) {

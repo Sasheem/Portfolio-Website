@@ -9,7 +9,6 @@ const Content = styled.div`
   justify-content: flex-start;
   padding: 1em;
   text-align: center;
-  background-color: orange;
 
   @media only screen and (min-width: 600px) {
     padding: 10em 6em 0 6em;

@@ -4,19 +4,13 @@ import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import Image from '../components/image'
-import ImageProjectOne from '../components/imageProjectOne'
-import ImageProjectTwo from '../components/imageProjectTwo'
-import ImageProjectThree from '../components/imageProjectThree'
 import ContainerContent from '../components/containerContent'
 import ProjectsContainer from '../components/projectsContainer'
 import ContainerBio from '../components/containerBio'
+import ProjectCard from '../components/projectCard'
 import ProjectsDeck from '../components/projectsDeck'
 import PageSection from '../components/pageSection'
 import SEO from '../components/seo'
-
-const ProjectCard = styled.div`
-  flex: 1;
-`
 
 const Fill = styled.div`
   flex: 0.15;
@@ -49,7 +43,7 @@ const IndexPage = () => (
     </PageSection>
     <PageSection>
       <ContainerContent>
-        <div style={{ backgroundColor: 'yellow' }}>
+        <div>
           <h2>My Services</h2>
           <ul>
             <li>Responsive Website Design</li>
@@ -62,7 +56,7 @@ const IndexPage = () => (
         </div>
       </ContainerContent>
       <ContainerContent>
-        <div style={{ backgroundColor: 'yellow' }}>
+        <div>
           <h2>About Me</h2>
           <p>
             I am a bartender/manager by day, freelance web developer by night,
@@ -83,20 +77,11 @@ const IndexPage = () => (
       <ProjectsContainer>
         <h2>Projects</h2>
         <ProjectsDeck>
-          <ProjectCard>
-            <ImageProjectOne alt="project one thumbnail" />
-            <h4>Project 1</h4>
-          </ProjectCard>
+          <ProjectCard number="1" />
           <Fill />
-          <ProjectCard>
-            <ImageProjectTwo alt="project two thumbnail" />
-            <h4>Project 2</h4>
-          </ProjectCard>
+          <ProjectCard number="2" />
           <Fill />
-          <ProjectCard>
-            <ImageProjectThree alt="project 3 thumbnail" />
-            <h4>Project 3</h4>
-          </ProjectCard>
+          <ProjectCard number="3" />
         </ProjectsDeck>
       </ProjectsContainer>
     </PageSection>
