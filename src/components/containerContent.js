@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Content = styled.div`
   flex: 1;
-  height: 40em;
+  /* height: 40em; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

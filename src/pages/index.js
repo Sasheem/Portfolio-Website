@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import Image from '../components/image'
 import ContainerContent from '../components/containerContent'
 import ProjectsContainer from '../components/projectsContainer'
@@ -10,7 +11,7 @@ import ContainerBio from '../components/containerBio'
 import ProjectCard from '../components/projectCard'
 import ProjectsDeck from '../components/projectsDeck'
 import PageSection from '../components/pageSection'
-import SEO from '../components/seo'
+import FormHome from '../components/formHome'
 
 const Fill = styled.div`
   flex: 0.15;
@@ -87,11 +88,9 @@ const IndexPage = () => (
     </PageSection>
     <PageSection>
       <ContainerContent>
-        <h2>Get in touch</h2>
-        <p>Build contact form</p>
+        <FormHome />
       </ContainerContent>
     </PageSection>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
