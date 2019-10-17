@@ -9,6 +9,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import FormInput from '../components/FormInput/form-input.component'
+import CheckBox from '../components/checkbox'
 
 const Container = styled.div`
   display: flex;
@@ -17,19 +18,61 @@ const Container = styled.div`
   margin: 5em auto;
   text-align: center;
 `
+const Group = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
+const TitleRow = styled.div`
+  flex: 0.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+`
+const ContentRow = styled.div`
+  flex: 4;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`
+const ContentColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`
+const CheckboxRow = styled(ContentColumn)`
+  flex-direction: row;
+  justify-content: flex-start;
+`
+const Title = styled.p`
+  color: grey;
+  font-weight: normal;
+  font-size: 18px;
+`
+const Label = styled.label`
+  color: black;
+  font-weight: normal;
+  font-size: 16px;
+`
 
 class FormHome extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      firstName: '',
-      lastName: '',
+      fullName: '',
       email: '',
-      phone: '',
-      budget: '',
+      company: '',
       website: '',
+      budget: '',
       description: '',
+      designChecked: false,
+      devWordpressChecked: false,
+      devReactChecked: false,
+      brandingChecked: false,
+      domainChecked: false,
+      contentChecked: false,
+      consultationChecked: false,
     }
   }
 
@@ -42,15 +85,26 @@ class FormHome extends React.Component {
     this.setState({ [name]: value })
   }
 
+  handleCheckboxChange = event => {
+    const { name, checked } = event.target
+    this.setState({ [name]: checked })
+  }
+
   render() {
     const {
-      firstName,
-      lastName,
+      fullName,
       email,
-      phone,
-      budget,
       website,
+      company,
+      budget,
       description,
+      designChecked,
+      devWordpressChecked,
+      devReactChecked,
+      brandingChecked,
+      domainChecked,
+      contentChecked,
+      consultationChecked,
     } = this.state
     return (
       <Container>
@@ -58,17 +112,10 @@ class FormHome extends React.Component {
         <span>Tell me about your project</span>
         <form onSubmit={this.handleSubmit}>
           <FormInput
-            name="firstName"
+            name="fullName"
             type="text"
-            value={firstName}
-            label="First Name"
-            onChange={this.handleChange}
-          />
-          <FormInput
-            name="lastName"
-            type="text"
-            value={lastName}
-            label="Last Name"
+            value={fullName}
+            label="Full Name"
             onChange={this.handleChange}
           />
           <FormInput
@@ -79,12 +126,90 @@ class FormHome extends React.Component {
             onChange={this.handleChange}
           />
           <FormInput
-            name="phone"
-            type="tel"
-            value={phone}
-            label="Phone Number"
+            name="company"
+            type="text"
+            value={company}
+            label="Company / Organization"
             onChange={this.handleChange}
           />
+          <FormInput
+            name="website"
+            type="text"
+            value={website}
+            label="Website (if applicable)"
+            onChange={this.handleChange}
+          />
+          <Group>
+            <TitleRow>
+              <Title>Choose services needed</Title>
+            </TitleRow>
+            <ContentRow>
+              <ContentColumn>
+                <CheckboxRow>
+                  <Label>
+                    <CheckBox
+                      name="designChecked"
+                      checked={designChecked}
+                      onChange={this.handleCheckboxChange}
+                    />
+                    <span>Web Design</span>
+                  </Label>
+                </CheckboxRow>
+                <CheckboxRow>
+                  <Label>
+                    <CheckBox
+                      name="devWordpressChecked"
+                      checked={devWordpressChecked}
+                      onChange={this.handleCheckboxChange}
+                    />
+                    <span>Web Development (WordPress)</span>
+                  </Label>
+                </CheckboxRow>
+                <CheckboxRow>
+                  <Label>
+                    <CheckBox
+                      name="devReactChecked"
+                      checked={devReactChecked}
+                      onChange={this.handleCheckboxChange}
+                    />
+                    <span>Web Development (React)</span>
+                  </Label>
+                </CheckboxRow>
+              </ContentColumn>
+              <ContentColumn>
+                <CheckboxRow>
+                  <Label>
+                    <CheckBox
+                      name="brandingChecked"
+                      checked={brandingChecked}
+                      onChange={this.handleCheckboxChange}
+                    />
+                    <span>Branding</span>
+                  </Label>
+                </CheckboxRow>
+                <CheckboxRow>
+                  <Label>
+                    <CheckBox
+                      name="domainChecked"
+                      checked={domainChecked}
+                      onChange={this.handleCheckboxChange}
+                    />
+                    <span>Domain / SEO</span>
+                  </Label>
+                </CheckboxRow>
+                <CheckboxRow>
+                  <Label>
+                    <CheckBox
+                      name="contentChecked"
+                      checked={contentChecked}
+                      onChange={this.handleCheckboxChange}
+                    />
+                    <span>Content Management System</span>
+                  </Label>
+                </CheckboxRow>
+              </ContentColumn>
+            </ContentRow>
+          </Group>
           <FormInput
             name="budget"
             type="number"
@@ -93,17 +218,10 @@ class FormHome extends React.Component {
             onChange={this.handleChange}
           />
           <FormInput
-            name="website"
-            type="text"
-            value={website}
-            label="Current Website"
-            onChange={this.handleChange}
-          />
-          <FormInput
             name="description"
             type="text"
             value={description}
-            label="Describe your project or idea"
+            label="Tell me about your project"
             onChange={this.handleChange}
           />
         </form>

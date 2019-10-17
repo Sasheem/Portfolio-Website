@@ -23,11 +23,9 @@ const IndexPage = () => (
     <PageSection>
       <ContainerBio>
         <h1>Hi I'm Sasheem</h1>
-        <p>
-          I design, and develop front end websites. <br />
-          Let me take your business to it's next level with an online presence
-          today.
-        </p>
+        <p>I'm a freelance web developer based out of Tallahassee, Florida.</p>
+        <p>My Work</p>
+        <p>Hire Me</p>
       </ContainerBio>
       <ContainerContent>
         <div
@@ -48,11 +46,11 @@ const IndexPage = () => (
           <h2>My Services</h2>
           <ul>
             <li>Responsive Website Design</li>
-            <li>Website Development</li>
+            <li>Website Development with React</li>
+            <li>Website Development with CMS</li>
             <li>Branding and Logo Design</li>
-            <li>Website domain set up</li>
-            <li>Search Engine Optimization</li>
-            <li>Website Development Consultation</li>
+            <li>Website Domain and SEO</li>
+            <li>IT and Web Consultation</li>
           </ul>
         </div>
       </ContainerContent>
