@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { Button, Container } from 'semantic-ui-react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -12,9 +13,15 @@ import ProjectCard from '../components/projectCard'
 import ProjectsDeck from '../components/projectsDeck'
 import PageSection from '../components/pageSection'
 import FormHome from '../components/formHome'
+import ButtonComponent from '../components/common/ButtonComponent'
 
 const Fill = styled.div`
   flex: 0.15;
+`
+const ButtonsContainer = styled(Container)`
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
 `
 
 const IndexPage = () => (
@@ -24,8 +31,10 @@ const IndexPage = () => (
       <ContainerBio>
         <h1>Hi I'm Sasheem</h1>
         <p>I'm a freelance web developer based out of Tallahassee, Florida.</p>
-        <p>My Work</p>
-        <p>Hire Me</p>
+        <ButtonsContainer>
+          <ButtonComponent inverted={false}>My Work</ButtonComponent>
+          <ButtonComponent inverted={true}>Hire Me</ButtonComponent>
+        </ButtonsContainer>
       </ContainerBio>
       <ContainerContent>
         <div

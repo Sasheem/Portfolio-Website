@@ -10,6 +10,7 @@ import styled from 'styled-components'
 
 import FormInput from '../components/FormInput/form-input.component'
 import CheckBox from '../components/checkbox'
+import ButtonComponent from '../components/common/ButtonComponent'
 
 const Container = styled.div`
   display: flex;
@@ -22,6 +23,9 @@ const Group = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+`
+const GroupSubmit = styled(Group)`
+  align-items: flex-end;
 `
 const TitleRow = styled.div`
   flex: 0.5;
@@ -64,7 +68,6 @@ class FormHome extends React.Component {
       email: '',
       company: '',
       website: '',
-      budget: '',
       description: '',
       designChecked: false,
       devWordpressChecked: false,
@@ -90,13 +93,16 @@ class FormHome extends React.Component {
     this.setState({ [name]: checked })
   }
 
+  handleSubmit = () => {
+    console.log(`form submitted`)
+  }
+
   render() {
     const {
       fullName,
       email,
       website,
       company,
-      budget,
       description,
       designChecked,
       devWordpressChecked,
@@ -211,19 +217,15 @@ class FormHome extends React.Component {
             </ContentRow>
           </Group>
           <FormInput
-            name="budget"
-            type="number"
-            value={budget}
-            label="Budget for project"
-            onChange={this.handleChange}
-          />
-          <FormInput
             name="description"
             type="text"
             value={description}
             label="Tell me about your project"
             onChange={this.handleChange}
           />
+          <GroupSubmit>
+            <ButtonComponent type="submit">Submit</ButtonComponent>
+          </GroupSubmit>
         </form>
       </Container>
     )
