@@ -2,22 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Content = styled.div`
-  width: 100%;
-  height: 40em;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0 3em;
+  padding: 1em;
   text-align: center;
 
   @media only screen and (min-width: 600px) {
-    padding: 0em 6em;
-    height: 30em;
+    padding: 6em 6em 0 6em;
     text-align: left;
   }
 `
 
-const ProjectsContainer = ({ children }) => <Content>{children}</Content>
+const ContainerContact = ({ children }) => <Content>{children}</Content>
 
-export default ProjectsContainer
+export default ContainerContact

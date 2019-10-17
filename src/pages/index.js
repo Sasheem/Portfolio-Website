@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Image from '../components/image'
 import ContainerContent from '../components/containerContent'
+import ContainerContact from '../components/containerContact'
 import ProjectsContainer from '../components/projectsContainer'
 import ContainerBio from '../components/containerBio'
 import ProjectCard from '../components/projectCard'
@@ -36,7 +37,7 @@ const IndexPage = () => (
           <ButtonComponent inverted={true}>Hire Me</ButtonComponent>
         </ButtonsContainer>
       </ContainerBio>
-      <ContainerContent>
+      <ContainerBio>
         <div
           style={{
             width: `300px`,
@@ -47,38 +48,39 @@ const IndexPage = () => (
         >
           <Image />
         </div>
-      </ContainerContent>
+      </ContainerBio>
     </PageSection>
     <PageSection>
       <ContainerContent>
-        <div>
-          <h2>My Services</h2>
-          <ul>
-            <li>Responsive Website Design</li>
-            <li>Website Development with React</li>
-            <li>Website Development with CMS</li>
-            <li>Branding and Logo Design</li>
-            <li>Website Domain and SEO</li>
-            <li>IT and Web Consultation</li>
-          </ul>
-        </div>
+        <h2>My Services</h2>
+        <ul>
+          <li>Responsive Website Design</li>
+          <li>Website Development with React</li>
+          <li>Website Development with CMS</li>
+          <li>Branding and Logo Design</li>
+          <li>Website Domain and SEO</li>
+          <li>IT and Web Consultation</li>
+        </ul>
       </ContainerContent>
       <ContainerContent>
-        <div>
-          <h2>About Me</h2>
-          <p>
-            I am a bartender/manager by day, freelance web developer by night,
-            and this is my website. I also maintain the website for Unhoused
-            Humanity, a nonprofit organization that works to house individuals
-            and families experiencing homelessness. When I am not creating
-            content, I like to bring my dog (German Shepard Lab mix) to the
-            park.
-            <br />
-            <br />I specialize in Front End Web Development using HTML5, CSS3,
-            and Javascrip (React). In addition, I enjoy creating websites using
-            WordPress. Let me build your online presence today!
-          </p>
-        </div>
+        <h2>About Me</h2>
+        <p>
+          I'm a full stack freelance web developer and UI/UX designer
+          specializing in responsive web development, modern CSS techniques, and
+          logo/branding. I work with clients to create user interfaces and
+          branding that excel their business goals.
+          <br />
+          <br />
+          Whether you need an online E-Commerce website or a simple blog, I will
+          guide you through the steps needed to be a dominant force in your
+          industry. In my off time I am taking care of my dog Gilby (German
+          Shepard Lab mix), maintaining the website for a nonprofit organization
+          Unhoused Humanity, or working on developing mobile apps for fun.
+          <br />
+          <br />
+          Check out my work below and shoot me a quick message about your
+          project!
+        </p>
       </ContainerContent>
     </PageSection>
     <PageSection>
@@ -94,9 +96,9 @@ const IndexPage = () => (
       </ProjectsContainer>
     </PageSection>
     <PageSection>
-      <ContainerContent>
+      <ContainerContact>
         <FormHome />
-      </ContainerContent>
+      </ContainerContact>
     </PageSection>
   </Layout>
 )
