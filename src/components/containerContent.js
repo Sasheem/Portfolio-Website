@@ -11,7 +11,11 @@ const Content = styled.div`
   text-align: center;
   /* background-color: red; */
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (max-width: 1120px) {
+    margin: 0 10vw;
+  }
+
+  @media only screen and (min-width: 1120px) {
     padding: 6em 6em 0 6em;
     text-align: left;
   }

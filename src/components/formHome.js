@@ -15,9 +15,12 @@ import ButtonComponent from '../components/common/ButtonComponent'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 30em;
   margin: 5em auto;
   text-align: center;
+
+  @media only screen and (min-width: 600px) {
+    width: 35vw;
+  }
 `
 const Group = styled.div`
   display: flex;
@@ -37,7 +40,11 @@ const ContentRow = styled.div`
   flex: 4;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media only screen and (min-width: 1120px) {
+    flex-direction: row;
+  }
 `
 const ContentColumn = styled.div`
   flex: 1;

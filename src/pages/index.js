@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { Button, Container } from 'semantic-ui-react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -19,10 +18,16 @@ import ButtonComponent from '../components/common/ButtonComponent'
 const Fill = styled.div`
   flex: 0.15;
 `
-const ButtonsContainer = styled(Container)`
+const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   margin-top: 1em;
+
+  @media only screen and (min-width: 1120px) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 `
 
 const IndexPage = () => (
