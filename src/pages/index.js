@@ -2,9 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout/layout.component'
 import SEO from '../components/seo'
 import Image from '../components/image'
+
+// local components
+import Bio from '../components/Bio/bio.component'
+
 import ContainerContent from '../components/containerContent'
 import ContainerContact from '../components/containerContact'
 import ProjectsContainer from '../components/projectsContainer'
@@ -33,7 +37,8 @@ const ButtonsContainer = styled.div`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <PageSection>
+    <Bio />
+    {/* <PageSection>
       <ContainerBio>
         <h1>Hi I'm Sasheem</h1>
         <p>I'm a freelance web developer based out of Tallahassee, Florida.</p>
@@ -104,7 +109,7 @@ const IndexPage = () => (
       <ContainerContact>
         <FormHome />
       </ContainerContact>
-    </PageSection>
+    </PageSection> */}
   </Layout>
 )
 

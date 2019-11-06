@@ -1,0 +1,15 @@
+@import '../../styles/global.scss';
+
+.header {
+    background-color: $main-accent-color;
+    margin-bottom: 1.45rem;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1120px;
+    padding: 1.45rem 1.0875rem;
+}
+.link {
+    color: $color-light;
+    text-decoration: none;    
+}
