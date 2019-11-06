@@ -1,0 +1,37 @@
+.card-service {
+    margin-top: 1em;
+    height: 100%;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    h4, p {
+        text-align: center;
+    }
+
+    @media only screen and (min-width: 960px) {
+        width: 20vw;
+        flex-direction: row;
+        align-self: flex-start;
+
+        h4, p {
+            text-align: left;
+        }
+    }
+}
+
+.row-service {
+    // margin-top: 2em;
+}
+.container-icon {
+    flex: 0.2;
+    display: flex;
+    justify-content: center;
+}
+.container-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
