@@ -13,7 +13,7 @@ import IconConsult from '../../assets/coffee.svg'
 
 const Services = () => (
   <div className="container-flex-col">
-    <h2>Services offered</h2>
+    <h2>Services</h2>
     <div className="container-col-3 row-service">
       <div className="card-service">
         <div className="container-icon">

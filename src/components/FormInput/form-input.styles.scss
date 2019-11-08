@@ -1,5 +1,4 @@
-$sub-color: grey;
-$main-color: black;
+@import '../../styles/global.scss';
 
 @mixin shrinkLabel {
   top: -20px;

@@ -35,6 +35,7 @@ const TitleRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin-bottom: 0.3em;
 `
 const ContentRow = styled.div`
   flex: 4;
@@ -59,6 +60,7 @@ const Title = styled.p`
   color: grey;
   font-weight: normal;
   font-size: 18px;
+  text-align: left;
 `
 const Label = styled.label`
   color: black;
