@@ -1,18 +1,82 @@
 @import '../../styles/global.scss';
 
+// .header {
+//     background-color: $main-accent-color;
+//     margin-bottom: 1.45rem;
+// }
+// .container {
+//     margin: 0 auto;
+//     max-width: 1120px;
+//     padding: 1.45rem 1.0875rem;
+//     @media only screen and (min-width: 800px) {
+//         h1 { text-align: left; }
+//     }
+// }
+// .link {
+//     color: $color-light;
+//     text-decoration: none;    
+// }
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 56px;
     background-color: $main-accent-color;
-    margin-bottom: 1.45rem;
+    z-index: 1000;
 }
-.container {
-    margin: 0 auto;
-    max-width: 1120px;
-    padding: 1.45rem 1.0875rem;
-    @media only screen and (min-width: 800px) {
-        h1 { text-align: left; }
-    }
+
+.header-nav {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 1rem;
 }
-.link {
-    color: $color-light;
-    text-decoration: none;    
+.header-logo {
+    display: flex;
+    align-items: center;
+	margin-left: 1rem;
+}
+.header-logo a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+
+.spacer {
+	flex: 1;
+}
+.header-nav-items ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    display: flex;
+}
+.header-nav-items li {
+    padding: 0 0.5rem;
+    margin-bottom: 0;
+}
+
+.header-nav-items a {
+	color: white;
+	text-decoration: none;
+}
+.header-nav-items a:hover,
+.header-nav-items a:active {
+	color: $link-hover-color;
+}
+
+@media only screen and (max-width: 768px) {
+	.header-nav-items {
+		display: none;
+	}
+}
+@media only screen and (min-width: 769px) {
+	.header-toggle-button {
+		display: none;
+	}
+
+	.header-logo {
+		margin-left: 0;
+	}
 }

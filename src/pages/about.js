@@ -27,7 +27,6 @@ const SecondPage = () => (
         <br />
         Check out my work below and shoot me a quick message about your project!
       </p>
-      <Link to="/">Go to home</Link>
     </div>
   </Layout>
 )
