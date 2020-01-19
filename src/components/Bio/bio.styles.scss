@@ -19,11 +19,16 @@
     align-items: flex-end;
 
     @media only screen and (min-width: 800px) {
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
     }
 }
 .container-image {
-    width: 350px;
-    max-height: auto;
+    // width: 350px;
+    // max-height: auto;
+    height: 15em;
+	width: 15em;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
 }

@@ -29,7 +29,12 @@ const Image = () => {
   return (
     <Img
       fluid={data.placeholderImage.childImageSharp.fluid}
-      style={{ borderRadius: 10 }}
+      style={{
+        display: 'block',
+        margin: '0 auto',
+        height: '100%',
+        width: 'auto',
+      }}
     />
   )
 }
