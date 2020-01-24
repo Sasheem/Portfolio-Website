@@ -125,7 +125,12 @@ class FormHome extends React.Component {
       <Container>
         <h2>Get in touch</h2>
         <span>Tell me about your project</span>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          // onSubmit={this.handleSubmit}
+          name="contact-home-web-project"
+          method="POST"
+          data-netlify="true"
+        >
           <FormInput
             name="fullName"
             type="text"
