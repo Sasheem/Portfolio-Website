@@ -6,8 +6,9 @@ import ImageProject from '../ImageProject/image-project.component'
 
 const CardProject = ({ image, title, description }) => (
   <div className="container-card">
-    {/* <ImageProject alt="project image" /> */}
-    <div className="card-image" />
+    <div className="card-image-container">
+      <ImageProject alt="project image" image={image} />
+    </div>
     <h4>{title}</h4>
     <p>{description}</p>
   </div>

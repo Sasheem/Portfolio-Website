@@ -10,19 +10,19 @@ const Projects = () => (
     <h2>My recent projects</h2>
     <div className="container-projects">
       <CardProject
-        image=""
+        image="project1.png"
         title="Sleep Out Tallahassee"
         description="Interface Design, Frontend Development, Wordpress Backend, UI/UX"
       />
       <span className="flex-space" />
       <CardProject
-        image=""
+        image="project5.png"
         title="Unhoused Humanity"
         description="Interface Design, Frontend Development, Squarespace Backend, and 5 others"
       />
       <span className="flex-space" />
       <CardProject
-        image=""
+        image="project3.png"
         title="Ecommerce Website"
         description="Frontend Development, React, Stripe API"
       />

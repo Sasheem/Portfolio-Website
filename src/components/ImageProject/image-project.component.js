@@ -30,7 +30,13 @@ const ImageProject = () => {
     <Img
       //   sizes="(max-width: 500px) 100vw, 500px"
       fluid={data.projectImage.childImageSharp.fluid}
-      style={{ borderRadius: 10 }}
+      style={{
+        display: 'block',
+        margin: '0 auto',
+        height: '100%',
+        width: 'auto',
+        borderRadius: '2%',
+      }}
     />
   )
 }
