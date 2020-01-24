@@ -127,10 +127,14 @@ class FormHome extends React.Component {
         <span>Tell me about your project</span>
         <form
           // onSubmit={this.handleSubmit}
+          id="contact-home-web-project"
           name="contact-home-web-project"
           method="POST"
           data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          action="/success"
         >
+          <input type="hidden" name="bot-field" />
           <FormInput
             name="fullName"
             type="text"

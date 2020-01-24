@@ -19,12 +19,12 @@ const Header = ({ siteTitle, drawerClickHandler }) => (
       <div className="spacer" />
       <div className="header-nav-items">
         <ul>
-          <li>
+          {/* <li>
             <Link to="/about/">
               <a>About</a>
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link to="/projects">
               <a>Projects</a>
             </Link>
@@ -38,7 +38,7 @@ const Header = ({ siteTitle, drawerClickHandler }) => (
             <Link to="/contact/">
               <a>Hire Me</a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="header-toggle-button">

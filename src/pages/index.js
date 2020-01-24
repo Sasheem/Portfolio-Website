@@ -41,7 +41,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Bio />
     <Services />
-    <Projects />
+    {/* <Projects /> */}
     {/* <PageSection>
       <ProjectsContainer>
         <h2>Projects</h2>

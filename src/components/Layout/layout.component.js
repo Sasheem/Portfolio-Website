@@ -51,9 +51,15 @@ class Layout extends Component {
         {backdrop}
         <div className="container">
           <main>{children}</main>
-          <footer>
+          <footer
+            style={{
+              marginTop: '40vh',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
             © {new Date().getFullYear()}, Built with
-            {` `}
+            {`  `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
