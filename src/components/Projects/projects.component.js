@@ -6,7 +6,7 @@ import './projects.styles.scss'
 import CardProject from '../CardProject/card-project.component'
 
 const Projects = () => (
-  <div className="container-flex-col">
+  <section className="container-flex-col">
     <h2>My recent projects</h2>
     <div className="container-projects">
       <CardProject
@@ -27,7 +27,7 @@ const Projects = () => (
         description="Frontend Development, React, Stripe API"
       />
     </div>
-  </div>
+  </section>
 )
 
 export default Projects
