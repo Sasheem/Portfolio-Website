@@ -135,6 +135,11 @@ class FormHome extends React.Component {
           action="/success"
         >
           <input type="hidden" name="bot-field" />
+          <input
+            type="hidden"
+            name="form-name"
+            value="contact-home-web-project"
+          />
           <FormInput
             name="fullName"
             type="text"
