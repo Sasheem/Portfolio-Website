@@ -247,7 +247,7 @@ class FormHome extends React.Component {
             label="Tell me about your project"
             onChange={this.handleChange}
           />
-          <div data-netlify-recaptcha="true" />
+          <div data-netlify-recaptcha="true"></div>
           <GroupSubmit>
             <ButtonComponent type="submit">Submit</ButtonComponent>
           </GroupSubmit>
