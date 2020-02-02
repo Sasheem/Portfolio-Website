@@ -131,7 +131,7 @@ class FormHome extends React.Component {
           name="contact-home-web-project"
           method="POST"
           data-netlify="true"
-          netlify-honeypot="bot-field"
+          data-netlify-honeypot="bot-field"
           data-netlify-recaptcha="true"
           action="/success"
         >
