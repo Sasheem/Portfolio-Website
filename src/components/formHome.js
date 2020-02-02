@@ -131,7 +131,8 @@ class FormHome extends React.Component {
           name="contact-home-web-project"
           method="POST"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
+          netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
           action="/success"
         >
           <input type="hidden" name="bot-field" />
@@ -246,6 +247,7 @@ class FormHome extends React.Component {
             label="Tell me about your project"
             onChange={this.handleChange}
           />
+          <div data-netlify-recaptcha="true" />
           <GroupSubmit>
             <ButtonComponent type="submit">Submit</ButtonComponent>
           </GroupSubmit>
