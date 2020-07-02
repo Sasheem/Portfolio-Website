@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
 
 import { FirebaseContext } from '../Firebase';
 import MailIcon from '../../assets/mail-icon.svg';
@@ -126,7 +126,7 @@ const Contact = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
-  const recaptchaRef = useRef();
+  // const recaptchaRef = useRef();
   // set state when input changes
   function handleInputChange(ev) {
     ev.persist();
@@ -138,11 +138,11 @@ const Contact = () => {
   }
 
   // save message to firebase & send myself an email
-  const handleSubmit = async ev => {
+  const handleSubmit = ev => {
     ev.preventDefault();
-    const token = await recaptchaRef.current.executeAsync();
-    console.log(`token: ${typeof token}`);
-    console.dir(token);
+    // const token = await recaptchaRef.current.executeAsync();
+    // console.log(`token: ${typeof token}`);
+    // console.dir(token);
     const { name, email, category, message } = formValues;
     console.log(
       `name: ${name} \n email: ${email} \n category: ${category} \n message: ${message}`
