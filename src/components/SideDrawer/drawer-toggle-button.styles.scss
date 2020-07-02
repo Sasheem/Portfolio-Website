@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 .toggle-button {
 	display: flex;
 	flex-direction: column;
@@ -16,5 +18,5 @@
 .toggle-button-line {
 	width: 30px;
 	height: 2px;
-	background: white;
+	background: $eerie-black;
 }

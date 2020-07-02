@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="13px" viewBox="0 0 22 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>chevron-down-solid-lght</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Podcast-Copy" transform="translate(-625.000000, -940.000000)" fill="#EEF0F2" fill-rule="nonzero">
+            <g id="chevron-down-solid-lght" transform="translate(625.000000, 940.000000)">
+                <path d="M10.114613,12.6081192 L0.353092466,3.11010421 C-0.117697489,2.65202526 -0.117697489,1.90936361 0.353092466,1.45133353 L1.49161758,0.343547817 C1.96160388,-0.113749175 2.72331621,-0.114628875 3.19440753,0.34159293 L10.9670377,7.86893504 L18.7396176,0.34159293 C19.2107089,-0.114628875 19.9724212,-0.113749175 20.4424075,0.343547817 L21.5809326,1.45133353 C22.0517226,1.90941248 22.0517226,2.65207413 21.5809326,3.11010421 L11.8194623,12.6081192 C11.3486724,13.0661493 10.585403,13.0661493 10.114613,12.6081192 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -3,8 +3,27 @@ module.exports = {
     title: `SasheemDev`,
     description: `Freelance Web Developer designing and creating online presences for up and coming businesses`,
     author: `Sasheem Snell`,
+    githubLink: `https://github.com/Sasheem`,
+    twitterLink: `https://twitter.com/sasheemdev`,
+    linkedinLink: `https://www.linkedin.com/in/sasheem/`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-firesource',
+      options: {
+        credential: require('./firebase.json'),
+        types: [
+          {
+            type: 'User',
+            collections: 'users',
+            map: doc => ({
+              name: doc.name,
+            }),
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -24,7 +43,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/code-logo-circle.png`, // This path is relative to the root of the site.
+        icon: `src/assets/logo-dark-md-bgwhite.svg`,
+        // icon: `src/images/code-logo-circle.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,
@@ -46,4 +66,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

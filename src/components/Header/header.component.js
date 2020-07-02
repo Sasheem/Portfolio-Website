@@ -1,59 +1,65 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import DrawerToggleButton from '../SideDrawer/drawer-toggle-button.component'
+import DrawerToggleButton from '../SideDrawer/drawer-toggle-button.component';
 
-import './header.styles.scss'
+import Logo from '../../assets/logo-dark-gradient-md.svg';
+
+import './header.styles.scss';
+import { FirebaseContext } from '../Firebase';
 
 const Header = ({ siteTitle, drawerClickHandler }) => (
   <header className="header">
     <nav className="header-nav">
-      <div className="header-logo">
-        <Link to="/" className="link">
-          {'<'}
-          {siteTitle}
-          {' />'}
-        </Link>
-      </div>
+      <span className="header-logo" onClick={() => scrollTo('#hero')}>
+        <Logo />
+      </span>
+      {/* <Link to="/" className="header-logo">
+        <Logo />
+      </Link> */}
       <div className="spacer" />
       <div className="header-nav-items">
         <ul>
-          {/* <li>
-            <Link to="/about/">
-              <a>About</a>
-            </Link>
-          </li> */}
-          {/* <li>
-            <Link to="/projects">
-              <a>Projects</a>
-            </Link>
+          <li>
+            <p
+              className="text-2xl-responsive font-bold"
+              onClick={() => scrollTo('#work-dev')}
+            >
+              Portfolio
+            </p>
           </li>
           <li>
-            <Link to="/blog/">
-              <a>Blog</a>
-            </Link>
+            <p
+              className="text-2xl-responsive font-bold"
+              onClick={() => scrollTo('#contact')}
+            >
+              Contact
+            </p>
           </li>
-          <li>
-            <Link to="/contact/">
-              <a>Hire Me</a>
-            </Link>
-          </li> */}
         </ul>
       </div>
-      <div className="header-toggle-button">
+      {/* <div className="header-toggle-button">
         <DrawerToggleButton click={drawerClickHandler} />
-      </div>
+      </div> */}
+      <FirebaseContext.Consumer>
+        {props => {
+          console.log(`props: ${props}`);
+          console.dir(props);
+          return <div />;
+        }}
+      </FirebaseContext.Consumer>
     </nav>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

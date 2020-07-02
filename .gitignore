@@ -52,7 +52,10 @@ typings/
 *.tgz
 
 # dotenv environment variables file
-.env
+.env*
+
+# firebase.json
+firebase.json
 
 # gatsby files
 .cache/
