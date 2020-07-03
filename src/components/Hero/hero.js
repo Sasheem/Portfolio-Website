@@ -45,7 +45,7 @@ const Hero = () => {
             </div>
             <div className="second-div willchange">
               <BioText className="mt-6 text-xl max-w-29 text-2xl text-grey-8">
-                I am a 26 year old{' '}
+                I am a{' '}
                 <span className="span font-medium">
                   Front-End Web Developer
                 </span>{' '}

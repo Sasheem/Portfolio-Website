@@ -94,7 +94,10 @@ const WorkFrontEnd = () => {
           A few websites I have designed and coded.
         </p>
         <ProjectsFlex>
-          <ProjectLink target="_blank">
+          <ProjectLink
+            target="_blank"
+            href="https://github.com/Sasheem/Portfolio-Website"
+          >
             <Img
               fluid={projectDataOne}
               alt="Portfolio Website"
@@ -107,7 +110,10 @@ const WorkFrontEnd = () => {
               }}
             />
           </ProjectLink>
-          <ProjectLink target="_blank">
+          <ProjectLink
+            target="_blank"
+            href="https://musing-joliot-870301.netlify.app/"
+          >
             <Img
               fluid={projectDataTwo}
               alt="Unhoused Humanity Website"
@@ -119,7 +125,7 @@ const WorkFrontEnd = () => {
               }}
             />
           </ProjectLink>
-          <ProjectLink target="_blank">
+          <ProjectLink target="_blank" href="https://sleepouttlh.org/">
             <Img
               fluid={projectDataThree}
               alt="Sleep Out 2019 Website"
