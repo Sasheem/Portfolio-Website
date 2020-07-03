@@ -6,9 +6,11 @@ import styled from 'styled-components';
 import Github from '../../assets/github-brands.svg';
 
 const ProjectLink = styled.a`
-  min-width: 20rem;
+  min-width: 18em;
   height: 250px;
   border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -16,6 +18,8 @@ const ProjectLink = styled.a`
   &:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transform: scale(1.1);
   }
 
   &:active {
@@ -24,53 +28,58 @@ const ProjectLink = styled.a`
   }
 `;
 
-const ProjectGrid = styled.div`
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: 1fr 1fr 1fr;
+const ProjectsFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 
-  @media only screen and (max-width: 1120px) {
-    grid-template-columns: 1fr;
-  }
-
-  @media only screen and (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
   }
 `;
 
-const StyledImg = styled(Img)`
-  object-fit: fill;
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5rem;
+const Projects = styled.div`
+  display: grid;
+  grid-gap: 2em;
+  justify-items: center;
+  background-color: yellow;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 960px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 const WorkFrontEnd = () => {
   const data = useStaticQuery(graphql`
-    query MyProjectsQuery {
-      allFile(
-        filter: {
-          ext: { regex: "/(png)/" }
-          relativeDirectory: { eq: "projects" }
-        }
-      ) {
-        edges {
-          node {
-            base
-            childImageSharp {
-              fixed(width: 400) {
-                aspectRatio
-                base64
-                src
-                srcSet
-              }
-            }
-          }
+    fragment processProjectImage on File {
+      childImageSharp {
+        fluid(maxWidth: 325) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
+    query {
+      projectOne: file(relativePath: { eq: "portfolio-web.png" }) {
+        ...processProjectImage
+      }
+      projectTwo: file(relativePath: { eq: "unhoused-humanity-web.png" }) {
+        ...processProjectImage
+      }
+      projectThree: file(relativePath: { eq: "sleep-out-2019-web.png" }) {
+        ...processProjectImage
+      }
+    }
   `);
+  const projectDataOne = data.projectOne.childImageSharp.fluid;
+  const projectDataTwo = data.projectTwo.childImageSharp.fluid;
+  const projectDataThree = data.projectThree.childImageSharp.fluid;
+
   return (
     <div
       className="flex flex-col justify-center items-left mb-12"
@@ -84,22 +93,45 @@ const WorkFrontEnd = () => {
         <p className="text-grey-6 text-left my-6 text-2xl-responsive leading-relaxed">
           A few websites I have designed and coded.
         </p>
-        <ProjectGrid>
-          {data.allFile.edges.map(({ node }) => (
-            <ProjectLink target="_blank">
-              <Img
-                fixed={node.childImageSharp.fixed}
-                alt={node.base.split('.')[0]}
-                objectFit="fill"
-                style={{
-                  height: '100%',
-                  width: '100%',
-                  borderRadius: 8,
-                }}
-              />
-            </ProjectLink>
-          ))}
-        </ProjectGrid>
+        <ProjectsFlex>
+          <ProjectLink target="_blank">
+            <Img
+              fluid={projectDataOne}
+              alt="Portfolio Website"
+              objectFit="fill"
+              style={{
+                height: '100%',
+                width: '100%',
+                // minWidth: '325px',
+                borderRadius: 8,
+              }}
+            />
+          </ProjectLink>
+          <ProjectLink target="_blank">
+            <Img
+              fluid={projectDataTwo}
+              alt="Unhoused Humanity Website"
+              objectFit="fill"
+              style={{
+                height: '100%',
+                width: '100%',
+                borderRadius: 10,
+              }}
+            />
+          </ProjectLink>
+          <ProjectLink target="_blank">
+            <Img
+              fluid={projectDataThree}
+              alt="Sleep Out 2019 Website"
+              objectFit="fill"
+              style={{
+                height: '100%',
+                width: '100%',
+                borderRadius: 8,
+              }}
+            />
+          </ProjectLink>
+        </ProjectsFlex>
         <a
           className="flex github linksmart font-medium px-4 py-3 my-6 items-center justify-start rounded-lg cursor-pointer overflow-hidden"
           href="https://github.com/Sasheem"

@@ -286,6 +286,9 @@ a {
     padding-left: 6em;
     padding-right: 6em;
 }
+.p-responsive {
+    padding: .5rem;
+}
 
 // padding vertical
 .py-10 {
@@ -595,6 +598,12 @@ a {
     }
 }
 
+@media only screen and (max-width: 640px) {
+    .p-responsive {
+        padding: .5rem;
+    }
+}
+
 // responsive adjust sizing
 @media only screen and (min-width: 640px) {
     .text-2xl { 
@@ -710,6 +719,7 @@ a {
 }
 
 .card {
+    transition-property: transform,box-shadow;
     width: 29%;
 }
 

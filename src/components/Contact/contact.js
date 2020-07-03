@@ -113,6 +113,11 @@ const ContactContainer = styled.div`
     padding-left: 3rem;
     padding-right: 3rem;
   }
+
+  @media only screen and (max-width: 375px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 `;
 
 const Contact = () => {

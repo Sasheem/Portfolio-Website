@@ -61,8 +61,7 @@ const Hero = () => {
         </div>
         <div className="flex items-center w-full justify-between">
           <div
-            className="circle simplelink cursor-pointer"
-            style={{ padding: 10 }}
+            className="circle simplelink cursor-pointer p-responsive"
             onClick={handleArrowClick}
           >
             <ArrowIcon className="circle-icon" />
