@@ -12,3 +12,9 @@
 .error-message {
     color: $color-status-error;
 }
+
+.recaptcha {
+    width: 8em;
+    height: 100%;
+    justify-self: flex-end;
+}
