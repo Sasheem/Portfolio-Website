@@ -346,6 +346,7 @@ const Contact = () => {
                   ref={recaptchaRef}
                   sitekey={process.env.GATSBY_SITE_KEY}
                   onChange={onChange}
+                  size={'compact'}
                 />
               </div>
             </div>
