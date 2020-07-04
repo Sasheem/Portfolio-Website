@@ -347,9 +347,9 @@ const Contact = () => {
                 onChange={onChange}
                 size={'normal'}
                 style={{
-                  maxWidth: '20px',
-                  maxHeight: '5px',
-                  justifySelf: 'flex-end',
+                  width: '20px',
+                  height: '5px',
+                  alignSelf: 'flex-end',
                 }}
               />
             </div>
