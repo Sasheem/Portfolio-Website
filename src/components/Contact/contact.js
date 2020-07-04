@@ -143,7 +143,7 @@ const Contact = () => {
   }
 
   // save message to firebase & send myself an email
-  const handleSubmit = ev => {
+  const handleSubmit = async ev => {
     ev.preventDefault();
     const token = await recaptchaRef.current.executeAsync();
     console.log(`token: ${typeof token}`);
@@ -152,7 +152,6 @@ const Contact = () => {
     console.log(
       `name: ${name} \n email: ${email} \n category: ${category} \n message: ${message}`
     );
-
 
     try {
       if (firebase) {
@@ -342,7 +341,7 @@ const Contact = () => {
               >
                 {isProcessing ? 'Processing...' : 'Send Message'}
               </button>
-              <div className='recaptcha'>
+              <div className="recaptcha">
                 <ReCAPTCHA
                   ref={recaptchaRef}
                   sitekey={process.env.GATSBY_SITE_KEY}
