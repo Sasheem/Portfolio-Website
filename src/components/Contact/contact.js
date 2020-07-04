@@ -341,14 +341,17 @@ const Contact = () => {
               >
                 {isProcessing ? 'Processing...' : 'Send Message'}
               </button>
-              <div className="recaptcha">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.GATSBY_SITE_KEY}
-                  onChange={onChange}
-                  size={'normal'}
-                />
-              </div>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.GATSBY_SITE_KEY}
+                onChange={onChange}
+                size={'normal'}
+                style={{
+                  maxWidth: '20px',
+                  maxHeight: '5px',
+                  justifySelf: 'flex-end',
+                }}
+              />
             </div>
             {!!isSuccess && (
               <div className="success-message">Message sent!</div>
