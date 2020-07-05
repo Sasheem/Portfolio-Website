@@ -132,6 +132,7 @@ const Contact = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const recaptchaRef = useRef();
+
   // set state when input changes
   function handleInputChange(ev) {
     ev.persist();
@@ -146,33 +147,30 @@ const Contact = () => {
   const handleSubmit = async ev => {
     ev.preventDefault();
     const token = await recaptchaRef.current.getValue();
-    console.log(`token: ${typeof token}`);
-    console.log(`token length: ${token.length}`);
-    console.dir(token);
     const { name, email, category, message } = formValues;
-    console.log(
-      `name: ${name} \n email: ${email} \n category: ${category} \n message: ${message}`
-    );
 
     try {
-      if (firebase && token.length !== 0) {
-        setIsProcessing(true);
-        const result = await firebase.createMessage({
-          name,
-          email,
-          category,
-          message,
-        });
-        console.log(`message result: ${typeof result}`);
-        console.dir(result);
-        setFormValues({
-          name: '',
-          email: '',
-          category: 'select',
-          message: '',
-        });
-        setIsProcessing(false);
-        setIsSuccess(true);
+      if (firebase) {
+        // check if ReCAPTCHA challenge passed
+        if (token.length !== 0) {
+          setIsProcessing(true);
+          const result = await firebase.createMessage({
+            name,
+            email,
+            category,
+            message,
+          });
+          setFormValues({
+            name: '',
+            email: '',
+            category: 'select',
+            message: '',
+          });
+          setIsProcessing(false);
+          setIsSuccess(true);
+        } else {
+          setErrorMessage('Pass ReCAPTCHA Challenge');
+        }
       }
     } catch (error) {
       setIsProcessing(false);
