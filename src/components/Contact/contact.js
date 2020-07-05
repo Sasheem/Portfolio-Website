@@ -143,9 +143,9 @@ const Contact = () => {
   }
 
   // save message to firebase & send myself an email
-  const handleSubmit = async ev => {
+  const handleSubmit = ev => {
     ev.preventDefault();
-    const token = await recaptchaRef.current.executeAsync();
+    const token = recaptchaRef.current.getValue();
     console.log(`token: ${typeof token}`);
     console.dir(token);
     const { name, email, category, message } = formValues;
