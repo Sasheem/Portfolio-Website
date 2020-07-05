@@ -147,6 +147,7 @@ const Contact = () => {
     ev.preventDefault();
     const token = await recaptchaRef.current.getValue();
     console.log(`token: ${typeof token}`);
+    console.log(`token length: ${token.length}`);
     console.dir(token);
     const { name, email, category, message } = formValues;
     console.log(
@@ -154,7 +155,7 @@ const Contact = () => {
     );
 
     try {
-      if (firebase) {
+      if (firebase && token.length !== 0) {
         setIsProcessing(true);
         const result = await firebase.createMessage({
           name,
