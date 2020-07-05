@@ -51,7 +51,7 @@ const Layout = ({ children }) => {
         <footer
           style={{
             marginTop: '40vh',
-            paddingBottom: '10',
+            paddingBottom: '10vh',
             display: 'flex',
             justifyContent: 'center',
           }}
