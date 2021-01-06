@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Sasheem Snell <sasheem.snell@gmail.com>",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "feather-icons": "^4.24.1",
     "firebase": "^7.15.5",
     "gatsby": "^2.15.31",
